@@ -5,4 +5,4 @@ def uppercase(str):
         if code_num > 96 and code_num < 123:
             code_num = (ord(str[i]) - 32)
         print("{:c}".format(code_num), end='')
-    print()    
+    print()
