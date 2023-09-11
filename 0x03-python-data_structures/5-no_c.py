@@ -1,7 +1,8 @@
-#!/usr/bin/env python3
+#!/usr/bin/python3
 def no_c(my_string):
-    new_list = ""
-    for i in my_string:
-         if i != 'c' and i != 'C':
-             my_string.append(i)
-    return ''.join(new_list[i])
+    letter_list = [
+        letter for letter in my_string if letter != 'c' and
+        letter != 'C'
+    ]
+    new_word = "".join(letter_list)
+    return new_word
