@@ -1,5 +1,10 @@
+#!/usr/bin/python3
+""" The descrbes the class rectangle"""
+
+
 class Rectangle:
-    """ The descrbes the class rectangle"""
+    """ Contains the class definition"""
+
     pass
 
 
