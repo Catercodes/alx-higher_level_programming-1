@@ -1,23 +1,23 @@
 #!/usr/bin/python3
-""" The descrbes the class rectangle"""
+""" Contain the class rectangle"""
 
 
 class Rectangle:
-    """ Contains the class definition"""
+    """ Definition class rectangle """
 
     def __init__(self, width=0, heigth=0):
-        """Instantiation with optional width and height: def __init__(self, width=0, height=0):"""
+        """Instantiaition with optional width and height """
         self.width = width
         self.heigth = heigth
 
     @property
     def width(self):
-        """property def width(self): and retrieve it"""
+        """retrieves width   of the rectangle"""
         return self.__width
 
     @width.setter
     def width(self, value):
-        """property setter"""
+        """set the value of the width"""
         self.__width = value
         if not isinstance(value, int):
             raise TypeError("width must be an integer")
@@ -26,12 +26,12 @@ class Rectangle:
 
     @property
     def heigth(self):
-        """property def heigth(self): and retrieve it"""
+        """retrieve the lenght of the heigth of the rectangle"""
         return self.__heigth
 
     @heigth.setter
     def heigth(self, value):
-        """property setter"""
+        """set the value of the heigth"""
         self.__heigth = value
         if not isinstance(value, int):
             raise TypeError("heigth must be an integer")
