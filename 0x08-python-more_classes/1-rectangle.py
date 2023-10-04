@@ -5,10 +5,10 @@
 class Rectangle:
     """ Definition class rectangle """
 
-    def __init__(self, width=0, heigth=0):
+    def __init__(self, width=0, height=0):
         """Instantiaition with optional width and height """
         self.width = width
-        self.heigth = heigth
+        self.height = height
 
     @property
     def width(self):
@@ -21,19 +21,19 @@ class Rectangle:
         self.__width = value
         if not isinstance(value, int):
             raise TypeError("width must be an integer")
-        elif value < 0:
+        if value < 0:
             raise ValueError("width must be >= 0")
 
     @property
     def heigth(self):
         """retrieve the lenght of the heigth of the rectangle"""
-        return self.__heigth
+        return self.__height
 
     @heigth.setter
     def heigth(self, value):
         """set the value of the heigth"""
-        self.__heigth = value
+        self.__height = value
         if not isinstance(value, int):
             raise TypeError("heigth must be an integer")
-        elif value < 0:
+        if value < 0:
             raise ValueError("heigth must be >= 0")
