@@ -48,6 +48,7 @@ class Rectangle:
         return (self.width + self.height) * 2
 
     def __str__(self):
+        """ return the rectangle with the character #:"""
         if self.width == 0 or self.width == 0:
             return ""
         row = "#" * self.__width + "\n"
