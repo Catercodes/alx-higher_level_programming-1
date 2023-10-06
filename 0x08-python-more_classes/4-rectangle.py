@@ -56,6 +56,7 @@ class Rectangle:
         row = "#" * self.__width + "\n"
         rectangle = row * (self.__height - 1) + (self.__width * "#")
         return rectangle
+
     def __repr__(self):
         """ return the string representation of thr rectangle"""
         return f"Rectangle({self.width}, {self.height})"
