@@ -43,6 +43,7 @@ class Rectangle:
         return self.height * self.width
 
     def perimeter(self):
+        """return the primeter of the rectangle"""
         if self.width == 0 or self.height == 0:
             return 0
         else:
