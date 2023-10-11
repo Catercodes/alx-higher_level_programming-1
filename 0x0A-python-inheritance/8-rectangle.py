@@ -1,15 +1,16 @@
 #!/usr/bin/python3
-""" Contain inherited class """
+"""Contains Rectangle class"""
+
 
 BaseGeometry = __import__('7-base_geometry').BaseGeometry
 
 
 class Rectangle(BaseGeometry):
-    """class Rectangle that inherits from BaseGeometry"""
+    """Subclass Rectangle from parent class BaseGeometry"""
     def __init__(self, width, height):
-        """Instantiation with width and height"""
-
-        self.width = width
-        self.height = height
+        """Initializes the instance attributes"""
+        BaseGeometry.__init__(self)
         self.integer_validator("width", width)
         self.integer_validator("height", height)
+        self._width = width
+        self._height = height
