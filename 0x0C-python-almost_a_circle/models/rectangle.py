@@ -15,17 +15,20 @@ class Rectangle(Base):
         super().__init__(id)
         """Call the super class with id - this super call
         with use the logic of the __init__ of the Base class"""
+    
     @property
     def width(self):
         """ public getter and setter"""
         return self._width
 
     @width.setter
-    def width(self):
+    def width(self, value):
         """ raise exceptions"""
         if not isinstance(value, int):
             raise TypeError("{} must be an integer")
-        self.width = value
+        if value <= 0:
+            raise ValueError("width must be an integer")
+        self._width = value
 
     @property
     def height(self):
@@ -33,11 +36,13 @@ class Rectangle(Base):
         return self._height
 
     @height.setter
-    def height(self):
+    def height(self, value):
         """public getter and setter"""
         if not isinstance(value, int):
             raise TypeError("{} must be an integer")
-        self.height = value
+        if value <= 0:
+            raise ValueError("heigth must be an integer")
+        self._height = value
 
     @property
     def x(self):
@@ -47,8 +52,10 @@ class Rectangle(Base):
     @x.setter
     def x(self, value):
         """raise exceptions"""
-        if value <= 0:
-            raise ValueError("{} x must be >= 0")
+        if not isinstance(value, int):
+            raise TypeError(" must be an integer")
+        if value < 0:
+            raise ValueError("x must be > 0")
         self._x = value
 
     @property
@@ -59,6 +66,8 @@ class Rectangle(Base):
     @y.setter
     def y(self, value):
         """ raise exceptions"""
-        if value <= 0:
-            raise ValueError("{} y must be >= 0")
+        if not isinstance(value, int):
+            raise TypeError("{} must be an integer")
+        if value < 0:
+            raise ValueError("{} must be > 0")
         self._y = value
