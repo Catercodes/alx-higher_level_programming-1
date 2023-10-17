@@ -1,22 +1,19 @@
 #!/usr/bin/python3
 """ Contain The Rectangle """
 from models.base import Base
-""" contains The Rectangle """
+
 
 
 class Rectangle(Base):
     """Class Rectangle inherits from Base"""
-
     def __init__(self, width, height, x=0, y=0, id=None):
-        """Private instance attributes"""
-        self._width = width
-        self._height = height
-        self._x = x
-        self._y = y
-        super().__init__(id)
-        """Call the super class with id - this super call
-        with use the logic of the __init__ of the Base class"""
-
+        """Class constructor"""
+        Base.__init__(self, id)
+        self.width = width
+        self.height = height
+        self.x = x
+        self.y = y
+        
     @property
     def width(self):
         """ public getter and setter"""
