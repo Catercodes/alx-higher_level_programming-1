@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+""" Contain The Rectangle """
 from models.base import Base
 """ contains The Rectangle """
 
