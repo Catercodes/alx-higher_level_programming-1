@@ -15,7 +15,7 @@ class Rectangle(Base):
         super().__init__(id)
         """Call the super class with id - this super call
         with use the logic of the __init__ of the Base class"""
-    
+
     @property
     def width(self):
         """ public getter and setter"""
