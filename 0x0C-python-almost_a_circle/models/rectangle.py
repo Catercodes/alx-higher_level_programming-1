@@ -24,6 +24,7 @@ class Rectangle(Base):
     @width.setter
     def width(self, value):
         """ raise exceptions"""
+        self.validate_int('width', value)
         if not isinstance(value, int):
             raise TypeError("{} must be an integer")
         if value <= 0:
@@ -38,8 +39,9 @@ class Rectangle(Base):
     @height.setter
     def height(self, value):
         """public getter and setter"""
+        self.validate_int('height', value)
         if not isinstance(value, int):
-            raise TypeError("{} must be an integer")
+            raise TypeError(f"{height} must be an integer")
         if value <= 0:
             raise ValueError("heigth must be an integer")
         self._height = value
@@ -52,8 +54,9 @@ class Rectangle(Base):
     @x.setter
     def x(self, value):
         """raise exceptions"""
+        self.validate_int('x', value)
         if not isinstance(value, int):
-            raise TypeError(" must be an integer")
+            raise TypeError(f"{x} must be an integer")
         if value < 0:
             raise ValueError("x must be > 0")
         self._x = value
@@ -66,8 +69,20 @@ class Rectangle(Base):
     @y.setter
     def y(self, value):
         """ raise exceptions"""
+        self.validate_int('y', value)
         if not isinstance(value, int):
             raise TypeError("{} must be an integer")
         if value < 0:
             raise ValueError("{} must be > 0")
         self._y = value
+
+    def validate_int(self, name, value):
+        """Validates value is an integer"""
+        if not isinstance(value, int):
+            raise TypeError(f"{name} must be an integer")
+        if name == 'x' or name == 'y':
+            if value < 0:
+                raise ValueError(f"{name} must be >= 0")
+        else:
+            if value <= 0:
+                raise ValueError(f"{name} must be > 0")
