@@ -3,9 +3,11 @@
 from models.base import Base
 
 
-
 class Rectangle(Base):
-    """Class Rectangle inherits from Base"""
+    """
+    Subclass of Base class
+    """
+
     def __init__(self, width, height, x=0, y=0, id=None):
         """Class constructor"""
         Base.__init__(self, id)
@@ -13,7 +15,7 @@ class Rectangle(Base):
         self.height = height
         self.x = x
         self.y = y
-        
+
     @property
     def width(self):
         """ public getter and setter"""
