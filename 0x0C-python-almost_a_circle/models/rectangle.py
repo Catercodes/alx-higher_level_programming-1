@@ -9,7 +9,8 @@ class Rectangle(Base):
     """
 
     def __init__(self, width, height, x=0, y=0, id=None):
-        """Class constructor"""
+        """Private instance attributes, each with its own public
+        getter and setter"""
         Base.__init__(self, id)
         self._width = width
         self._height = height
@@ -18,12 +19,12 @@ class Rectangle(Base):
 
     @property
     def width(self):
-        """ public getter and setter"""
+        """ public getter and setter also retrieve it """
         return self._width
 
     @width.setter
     def width(self, value):
-        """ raise exceptions"""
+        """ raising exceptions"""
         self.validate_int('width', value)
         if not isinstance(value, int):
             raise TypeError("{} must be an integer")
@@ -38,7 +39,7 @@ class Rectangle(Base):
 
     @height.setter
     def height(self, value):
-        """public getter and setter"""
+        """raising Exceptions"""
         self.validate_int('height', value)
         if not isinstance(value, int):
             raise TypeError(f"{height} must be an integer")
