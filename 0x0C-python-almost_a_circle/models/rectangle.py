@@ -4,86 +4,68 @@ from models.base import Base
 
 
 class Rectangle(Base):
-    """
-    Subclass of Base class
-    """
-
     def __init__(self, width, height, x=0, y=0, id=None):
-        """Private instance attributes, each with its own public
-        getter and setter"""
-        Base.__init__(self, id)
-        self._width = width
-        self._height = height
-        self._x = x
-        self._y = y
+        "Call the super class constructor to initialize the 'id' attribute"
+        super().__init__(id)
+
+        """Use the setter methods to set the attributes"""
+        self.width = width
+        self.height = height
+        self.x = x
+        self.y = y
 
     @property
     def width(self):
-        """ public getter and setter also retrieve it """
-        return self._width
+        """Retrieves the width"""
+        return self.__width
 
     @width.setter
     def width(self, value):
-        """ raising exceptions"""
-        self.validate_int('width', value)
+        """raising Exceptions"""
         if not isinstance(value, int):
-            raise TypeError("{} must be an integer")
+            raise TypeError("width must be an integer")
         if value <= 0:
-            raise ValueError("width must be an integer")
-        self._width = value
+            raise ValueError("width must be > 0")
+        self.__width = value
 
     @property
     def height(self):
-        """ public getter and setter"""
-        return self._height
+        """Retrieves the height"""
+        return self.__height
 
     @height.setter
     def height(self, value):
-        """raising Exceptions"""
-        self.validate_int('height', value)
+        """ raising Execptions"""
         if not isinstance(value, int):
-            raise TypeError(f"{height} must be an integer")
+            raise TypeError("height must be an integer")
         if value <= 0:
-            raise ValueError("heigth must be an integer")
-        self._height = value
+            raise ValueError("height must be > 0")
+        self.__height = value
 
     @property
     def x(self):
-        """ public getter and setter"""
-        return self._x
+        """Retrieves the x"""
+        return self.__x
 
     @x.setter
     def x(self, value):
-        """raise exceptions"""
-        self.validate_int('x', value)
+        """ raising Exceptions"""
         if not isinstance(value, int):
-            raise TypeError(f"{x} must be an integer")
+            raise TypeError("x must be an integer")
         if value < 0:
-            raise ValueError("x must be > 0")
-        self._x = value
+            raise ValueError("x must be >= 0")
+        self.__x = value
 
     @property
     def y(self):
-        """ public getter and setter"""
-        return self._y
+        """Retrieves the width"""
+        return self.__y
 
     @y.setter
     def y(self, value):
-        """ raise exceptions"""
-        self.validate_int('y', value)
+        """ raising Exception"""
         if not isinstance(value, int):
-            raise TypeError("{} must be an integer")
+            raise TypeError("y must be an integer")
         if value < 0:
-            raise ValueError("{} must be > 0")
-        self._y = value
-
-    def validate_int(self, name, value):
-        """Validates value is an integer"""
-        if not isinstance(value, int):
-            raise TypeError(f"{name} must be an integer")
-        if name == 'x' or name == 'y':
-            if value < 0:
-                raise ValueError(f"{name} must be >= 0")
-        else:
-            if value <= 0:
-                raise ValueError(f"{name} must be > 0")
+            raise ValueError("y must be >= 0")
+        self.__y = value
