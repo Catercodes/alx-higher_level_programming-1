@@ -11,10 +11,10 @@ class Rectangle(Base):
     def __init__(self, width, height, x=0, y=0, id=None):
         """Class constructor"""
         Base.__init__(self, id)
-        self.width = width
-        self.height = height
-        self.x = x
-        self.y = y
+        self._width = width
+        self._height = height
+        self._x = x
+        self._y = y
 
     @property
     def width(self):
@@ -64,7 +64,7 @@ class Rectangle(Base):
     @property
     def y(self):
         """ public getter and setter"""
-        return self._x
+        return self._y
 
     @y.setter
     def y(self, value):
