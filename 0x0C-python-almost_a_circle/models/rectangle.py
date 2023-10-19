@@ -9,10 +9,10 @@ class Rectangle(Base):
     def __init__(self, width, height, x=0, y=0, id=None):
         """ Private class constructors"""
         super().__init__(id)
-        self.__width = width
-        self.__height = height
-        self.__x = x
-        self.__y = y
+        self.width = width
+        self.height = height
+        self.x = x
+        self.y = y
 
     @property
     def width(self):
@@ -22,6 +22,7 @@ class Rectangle(Base):
     @width.setter
     def width(self, value):
         """setting value"""
+        self.validate_value(value, 'width')
         self.__width = value
 
     @property
@@ -32,6 +33,7 @@ class Rectangle(Base):
     @height.setter
     def height(self, value):
         """setting value"""
+        self.validate_value(value, 'width')
         self.__height = value
 
     @property
@@ -42,6 +44,7 @@ class Rectangle(Base):
     @x.setter
     def x(self, value):
         """setting value"""
+        self.validate_value(value, 'x')
         self.__x = value
 
     @property
@@ -52,6 +55,7 @@ class Rectangle(Base):
     @y.setter
     def y(self, value):
         """setting value"""
+        self.validate_value(value, 'y')
         self.__y = value
 
     def validate_value(self, value, attr):
@@ -61,5 +65,5 @@ class Rectangle(Base):
         if attr == 'x' or attr == 'y':
             if value < 0:
                 raise ValueError(f"{attr} must be >= 0")
-        if value <= 0:
+        elif value <= 0:
             raise ValueError(f"{attr} must be > 0")
