@@ -80,5 +80,9 @@ class Rectangle(Base):
     def display(self):
         """ rectangle stdout "#" """
         row = self.width * "#"
+        hor = self.y * '\n'
+        print(hor, end="")
         for i in range(self.height):
+            var = self.x * " "
+            print(var, end="")
             print(row)
