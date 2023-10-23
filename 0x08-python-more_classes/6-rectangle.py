@@ -4,12 +4,12 @@
 
 class Rectangle:
     """ Definition class rectangle """
-    number_of_instances = 0 #  public class attribute
+    number_of_instances = 0
 
     def __init__(self, width=0, height=0):
         """Instantiaition with optional width and height """
-        self.width = width
-        self.height = height
+        self.__width = width
+        self.__height = height
         Rectangle.number_of_instances += 1
 
     @property
@@ -33,7 +33,7 @@ class Rectangle:
 
     @height.setter
     def height(self, value):
-        """set the value of the heigth"""
+        """set the value of the height"""
         if not isinstance(value, int):
             raise TypeError("height must be an integer")
         if value < 0:
